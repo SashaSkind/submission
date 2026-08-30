@@ -1,0 +1,23 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        minn = 1000000
+        maxx = -100000
+
+        lengh = len(prices)
+        a = 0
+        b = lengh - 1
+
+        for price in prices:
+            if price < minn:
+                minn = price
+            gain = price - minn
+            if gain > maxx:
+                maxx = gain
+        
+        if maxx <= 0:
+            return 0
+        return maxx
+            
+
+
+        
